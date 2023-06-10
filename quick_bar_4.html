@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      body {
+        height: 150vh;
+      }
+
+      ul {
+        position: fixed;
+        right: 3rem;
+        bottom: 2.5rem;
+        color: #2b495e;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      ul li {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0.7rem;
+        width: 100%;
+        font-weight: bolder;
+      }
+
+      ul li div {
+        position: relative;
+        padding: 1.3rem;
+        border-radius: 50%;
+        background-color: #2b495e;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+
+      ul li div:hover {
+        opacity: 1;
+      }
+
+      ul li div:hover .triangle-box {
+        display: block;
+        animation: slideIn 0.5s ease-in-out;
+      }
+
+      .triangle-box {
+        position: absolute;
+        top: 50%;
+        right: 60px;
+        transform: translate(0, -50%);
+        display: none;
+
+        width: 120px;
+        height: 40px;
+        background-color: black;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: white;
+        font-size: 14px;
+        line-height: 40px;
+        text-align: center;
+      }
+
+      ul li div .triangle-box::before {
+        content: "";
+        color: white;
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 0 8px 8px;
+        border-color: transparent transparent transparent black;
+      }
+
+      .triangle-box span {
+        position: absolute;
+        width: 100%;
+        font-weight: bold;
+        top: 0;
+        right: 0;
+      }
+
+      @keyframes slideIn {
+        0% {
+          /* transform: translateX(100%); */
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+          /* transform: translateX(0); */
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+
+    <title>디지털플란트 메인</title>
+  </head>
+  <body>
+    <!-- <img src="/images/digitalssamwebdesign2-1.png" alt="" /> -->
+    <ul class="quick_bar">
+      <li class="bar_list">
+        <div>
+          <div class="triangle-box">
+            <span>네이버 예약</span>
+          </div>
+          <i class="fas fa-calendar-check fa-lg" style="color: white"></i>
+        </div>
+      </li>
+      <li class="bar_list">
+        <div>
+          <div class="triangle-box">
+            <span>카톡상담</span>
+          </div>
+          <i class="fas fa-comment fa-lg" style="color: white"></i>
+        </div>
+      </li>
+      <li class="bar_list">
+        <div>
+          <div class="triangle-box">
+            <span>블로그</span>
+          </div>
+          <i class="fas fa-pen-to-square fa-lg" style="color: #ffffff"></i>
+        </div>
+      </li>
+      <li class="bar_list">
+        <div onclick="window.scrollTo(0,0);">
+          <i class="fa-solid fa-chevron-up fa-lg" style="color: #ffffff"></i>
+        </div>
+      </li>
+    </ul>
+
+    <script
+      src="https://kit.fontawesome.com/6e25ac4e83.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
